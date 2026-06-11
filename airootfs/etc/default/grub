@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# SAOS // GRUB Configuration File
+# Boot menu theme and options
+
+# Uncomment to force GRUB menu to appear on boot
+# GRUB_FORCE_HIDDEN_MENU="false"
+
+# Timeout before default entry boots (seconds)
+GRUB_TIMEOUT=5
+GRUB_TIMEOUT_STYLE=countdown
+
+# Default entry to boot
+GRUB_DEFAULT=0
+
+# Kernel parameters
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=0 rd.udev.log_level=0"
+GRUB_CMDLINE_LINUX=""
+
+# Resolution
+GRUB_GFXMODE=1920x1080x32
+GRUB_GFXPAYLOAD_LINUX=keep
+
+# Theme
+GRUB_THEME=/usr/share/grub/themes/saos/theme.txt
+
+# OS Name
+GRUB_DISTRIBUTOR="SAOS"
+
+# Preload fonts
+GRUB_FONT=/usr/share/grub/fonts/unifont.pf2
+
+# Color menu
+GRUB_COLOR_NORMAL="black/black"
+GRUB_COLOR_HIGHLIGHT="yellow/black"
+
+# Disable OEM tagging
+GRUB_DISABLE_OS_PROBER=false
+
+# Allow hardware-specific settings
+# Uncomment if needed:
+# GRUB_DISABLE_RECOVERY="true"
+# GRUB_DISABLE_SUBMENU="true"

@@ -1,0 +1,62 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 0,
+    "modules-left": ["custom/saos", "hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["cpu", "memory", "network", "custom/firewall", "clock"],
+
+    "custom/saos": {
+        "format": "[ SAOS v1.0 ]",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "all-outputs": true
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 60,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "[ SAOS // BROWSER ] $1",
+            "(.*)": "[ SAOS // $1 ]"
+        }
+    },
+
+    "custom/firewall": {
+        "exec": "systemctl is-active nftables | grep -q active && echo 'FW ON' || echo 'FW OFF'",
+        "interval": 30,
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "format": "CPU {usage}%",
+        "interval": 2,
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "MEM {percentage}%",
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "NET↑↓ {signalStrength}%",
+        "format-ethernet": "NET ETH",
+        "format-disconnected": "NET --",
+        "tooltip": false,
+        "interval": 5
+    },
+
+    "clock": {
+        "format": "{:%Y.%m.%d // %H:%M UTC}",
+        "timezone": "UTC",
+        "tooltip": false
+    }
+}

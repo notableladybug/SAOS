@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Theme
+Name=SAOS
+Comment=Secret Agent Operating System boot splash theme
+X-KDE-PluginInfo-Name=saos
+
+[X-KDE-Splash-Screen]
+Engine=Script
+Script=saos.script
+
+[X-Plymouth-Theme]
+Name=SAOS
+Description=Secret Agent Operating System
+Version=1.0
+ModuleName=script

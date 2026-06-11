@@ -1,0 +1,148 @@
+# SAOS Packages List
+# Secret Agent Operating System — Complete package manifest
+
+# === Core System ===
+base
+base-devel
+linux
+linux-firmware
+linux-headers
+mkinitcpio
+mkinitcpio-busybox
+e2fsprogs
+dosfstools
+parted
+
+# === Bootloader & Init ===
+grub
+efibootmgr
+efi-variable-support
+os-prober
+
+# === Networking ===
+networkmanager
+network-manager-applet
+iwd
+openssh
+curl
+wget
+openssl
+
+# === Display & Wayland ===
+wayland
+wayland-protocols
+wlroots
+hyprland
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
+xdg-desktop-portal
+xdg-user-dirs
+
+# === Login & Authentication ===
+greetd
+greetd-gtkgreet
+cryptsetup
+usbguard
+nftables
+# howdy  # Install via AUR: yay -S howdy
+
+# === Window Management & UI ===
+waybar
+fuzzel
+hyprlock
+hypridle
+nwg-displays
+libnotify
+dunst
+
+# === Terminal ===
+foot
+
+# === Fonts ===
+ttf-jetbrains-mono
+noto-fonts
+noto-fonts-emoji
+
+# === Boot Splash ===
+plymouth
+
+# === File Manager ===
+yazi
+ueberzugpp
+
+# === Installer ===
+calamares
+calamares-qt6
+
+# === GTK & Desktop Integration ===
+gtk4
+nwg-look
+glib2
+gsettings-desktop-schemas
+dconf
+
+# === Audio Stack ===
+pipewire
+pipewire-pulse
+pipewire-alsa
+wireplumber
+pavucontrol
+
+# === GPU Drivers ===
+mesa
+mesa-utils
+vulkan-radeon  # AMD
+vulkan-intel   # Intel
+nvidia         # NVIDIA (may conflict with nouveau)
+nvidia-utils
+nouveau        # Open-source NVIDIA
+
+# === Development Tools ===
+git
+neovim
+htop
+vim
+nano
+
+# === System Utilities ===
+unzip
+rsync
+gnupg
+sudo
+polkit
+polkit-gnome
+which
+man-db
+man-pages
+
+# === Hardware Control ===
+brightnessctl
+playerctl
+pamixer
+v4l-utils
+
+# === Media ===
+ffmpeg
+imagemagick
+
+# === Python ===
+python
+python-pip
+python-requests
+
+# === Package Management ===
+pacman-contrib  # paccache for cleaning cache
+
+# === Power Management ===
+acpi
+acpid
+tlp
+power-profiles-daemon
+
+# === Timezones ===
+tzdata
+
+# === Miscellaneous ===
+bash-completion
+zsh
+zsh-completions

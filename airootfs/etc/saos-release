@@ -1,0 +1,9 @@
+NAME="SAOS"
+PRETTY_NAME="SAOS — Secret Agent Operating System"
+ID=saos
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="0;32"
+HOME_URL="https://github.com/yourusername/saos"
+DOCUMENTATION_URL="https://github.com/yourusername/saos/wiki"
+LOGO=saos-logo

@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=SAOS
+Description=Secret Agent Operating System boot splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/saos
+ScriptFile=/usr/share/plymouth/themes/saos/saos.script

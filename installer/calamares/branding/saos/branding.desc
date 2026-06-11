@@ -1,0 +1,21 @@
+---
+componentName: saos
+
+strings:
+    brand: SAOS
+    short-description: Secret Agent Operating System
+    long-description: >
+        SAOS is a minimal, security-focused Arch Linux distribution
+        with a James Bond aesthetic. Built with Hyprland, Wayland,
+        and face recognition authentication.
+    version: "1.0"
+    release-cycle-url: "https://github.com/yourusername/saos"
+    support-url: "https://github.com/yourusername/saos/issues"
+
+images:
+    productlogo: logo.png
+    producticon: saos.png
+    sidebar: sidebar.png
+
+slideshows:
+    welcome: slides

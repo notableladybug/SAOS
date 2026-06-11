@@ -1,0 +1,139 @@
+#!/usr/bin/env bash
+# SAOS Quick Reference Card
+
+cat << 'EOF'
+
+╔════════════════════════════════════════════════════════════╗
+║         SAOS — SECRET AGENT OPERATING SYSTEM              ║
+║                  QUICK REFERENCE v1.0                     ║
+╚════════════════════════════════════════════════════════════╝
+
+KEYBOARD SHORTCUTS
+─────────────────────────────────────────────────────────────
+
+Window Management:
+  Super + Return     Open terminal (Foot)
+  Super + D          Application launcher (Fuzzel)
+  Super + Q          Kill active window
+  Super + F          Fullscreen toggle
+  Super + L          Lock screen
+  Super + E          File manager (Yazi)
+
+Workspace Navigation:
+  Super + 1-9        Switch to workspace N
+  Super + Shift + 1-9 Move window to workspace N
+
+Media Controls:
+  XF86AudioRaiseVolume    Increase volume
+  XF86AudioLowerVolume    Decrease volume
+  XF86MonBrightnessUp     Increase brightness
+  XF86MonBrightnessDown   Decrease brightness
+
+System:
+  Super + Shift + E   Exit Hyprland
+
+
+SYSTEM COMMANDS
+─────────────────────────────────────────────────────────────
+
+View System Info:
+  hostnamectl        Hostname
+  timedatectl        Date/time/timezone
+  systemctl status   Service status
+  journalctl -n 50   Last 50 log lines
+
+Package Management:
+  sudo pacman -S     Install packages
+  sudo pacman -Syyu  Update system
+  yay -S             Install from AUR
+
+Face Authentication:
+  sudo howdy add     Enroll face ID
+  sudo howdy test    Test face authentication
+
+
+CONFIGURATION FILES
+─────────────────────────────────────────────────────────────
+
+User Configs (~/.config/):
+  ~/.config/hypr/hyprland.conf      Window manager keybinds
+  ~/.config/waybar/config.jsonc     Status bar layout
+  ~/.config/foot/foot.ini           Terminal settings
+  ~/.config/fuzzel/fuzzel.ini       Launcher settings
+
+System Configs (/etc/):
+  /etc/hypr/hyprland.conf           System-wide Hyprland config
+  /etc/waybar/config.jsonc          System-wide Waybar config
+  /etc/foot/foot.ini                System-wide Foot config
+  /etc/NetworkManager/              Network settings
+  /etc/greetd/config.toml           Login screen settings
+
+
+COLOR SCHEME
+─────────────────────────────────────────────────────────────
+
+Background:     #000000 (Black)
+Primary Text:   #00ff41 (Phosphor Green)
+Dim Text:       #008f22 (Dark Green)
+Borders:        #00ff41 (1px Green)
+Alerts:         #ff0033 (Red)
+Warnings:       #ffaa00 (Amber)
+
+Font: JetBrains Mono (everywhere)
+
+
+USEFUL COMMANDS
+─────────────────────────────────────────────────────────────
+
+System Monitoring:
+  htop                   Process monitor
+  systemctl list-units   Running services
+  df -h                  Disk usage
+  free -h                Memory usage
+
+Desktop:
+  waybar --log-level debug    Debug status bar
+  hyprctl clients             List open windows
+  hyprctl reload              Reload Hyprland config
+
+Network:
+  nmcli connection show       List connections
+  nmcli device wifi list      Scan WiFi networks
+  nmcli device wifi connect   Connect to WiFi
+
+
+TROUBLESHOOTING
+─────────────────────────────────────────────────────────────
+
+Black screen / login issues:
+  systemctl status greetd
+  journalctl -u greetd -n 50
+
+Hyprland won't start:
+  hyprland --instance 0 &
+  journalctl -xe | grep hyprland
+
+Face ID not working:
+  ls /dev/video*              List video devices
+  howdy config                Edit Howdy config
+  sudo howdy test             Test face detection
+
+Keyboard not responding:
+  Check hyprland.conf keybinds
+  Press Super + Shift + E to reload
+
+
+DOCUMENTATION
+─────────────────────────────────────────────────────────────
+
+Full Specifications:    /usr/share/doc/saos/SPEC.md
+Build Instructions:     /usr/share/doc/saos/BUILD_GUIDE.md
+Contributing:           /usr/share/doc/saos/CONTRIBUTING.md
+Online:                 https://github.com/yourusername/saos
+
+╔════════════════════════════════════════════════════════════╗
+║              MISSION PARAMETERS CONFIRMED                 ║
+║                   SYSTEM READY                            ║
+╚════════════════════════════════════════════════════════════╝
+
+EOF

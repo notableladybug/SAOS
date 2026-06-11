@@ -1,0 +1,14 @@
+# Howdy — Linux Face Authentication
+# Configuration for PAM integration with greetd
+
+[Unit]
+Description=Howdy Face Authentication Setup
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c "grep -q 'pam_howdy' /etc/pam.d/greetd || echo 'auth sufficient pam_howdy.so' | install -D /dev/stdin /etc/pam.d/greetd-howdy"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

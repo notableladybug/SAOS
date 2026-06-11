@@ -1,0 +1,14 @@
+# Service dependencies for SAOS
+# Install required system services
+
+[Unit]
+Description=SAOS Post-Install Setup
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/saos-post-install.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
