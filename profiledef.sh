@@ -8,9 +8,7 @@ iso_application="Secret Agent Operating System"
 iso_version="1.0"
 install_dir="arch"
 buildmodes=('iso')
-bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
-           'uefi-ia32.systemd-boot.esp' 'uefi-x64.systemd-boot.esp'
-           'uefi-ia32.systemd-boot.eltorito' 'uefi-x64.systemd-boot.eltorito')
+bootmodes=('bios.syslinux' 'uefi-x64.systemd-boot')
 arch="x86_64"
 pacman_conf="pacman.conf"
 airootfs_image_type="squashfs"
