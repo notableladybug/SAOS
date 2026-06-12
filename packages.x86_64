@@ -15,6 +15,8 @@ parted
 
 # === Bootloader & Init ===
 grub
+syslinux
+memtest86+
 efibootmgr
 efi-variable-support
 os-prober
