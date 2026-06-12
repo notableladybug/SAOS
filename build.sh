@@ -8,6 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 OUT_DIR="$SCRIPT_DIR/out"
 WORK_DIR="$SCRIPT_DIR/work"
 PROFILE_DIR="$SCRIPT_DIR"
+RELENG="/usr/share/archiso/configs/releng"
 
 echo ""
 echo "  ███████╗ █████╗  ██████╗ ███████╗"
@@ -80,6 +81,23 @@ ln -sf /usr/lib/systemd/system/usbguard.service \
 # SAOS post-install setup service
 ln -sf /usr/lib/systemd/system/saos-setup.service \
     "$PROFILE_DIR/airootfs/etc/systemd/system/multi-user.target.wants/saos-setup.service" 2>/dev/null || true
+
+# Ensure required boot config files are present
+if [ ! -d "$SCRIPT_DIR/syslinux" ] || [ ! -d "$SCRIPT_DIR/efiboot/loader/entries" ]; then
+    echo "  [INFO] Boot config files missing; copying from archiso releng profile..."
+    if [ ! -d "$RELENG" ]; then
+        echo "  [ERROR] archiso releng profile not found at $RELENG"
+        echo "         Install archiso and run FIX_BUILD.sh or create syslinux/efiboot manually."
+        exit 1
+    fi
+    cp -r "$RELENG/syslinux" "$SCRIPT_DIR/"
+    cp -r "$RELENG/efiboot" "$SCRIPT_DIR/"
+    if [ -d "$RELENG/grub" ]; then
+        cp -r "$RELENG/grub" "$SCRIPT_DIR/"
+    fi
+    echo "  [INFO] Updating EFI boot entry labels to SAOS..."
+    find "$SCRIPT_DIR/efiboot" -name "*.conf" -exec sed -i 's/Arch Linux/SAOS/g' {} \;
+fi
 
 # Build ISO
 echo "  [INFO] Building ISO — this will take 10-20 minutes..."
